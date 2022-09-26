@@ -1,11 +1,19 @@
+import random
+
+_holder= []
+
 def put_stones():
-    pass
+    global _holder
+    _holder=[]
+    for i in range(5):
+        _holder.append(random.randint(1, 20))
 
-def take_from_bunch(position, quontity):
-    pass
+def take_from_bunch(position, quantity):
+    if 0<=position<len(_holder):
+        _holder[position]-=quantity
 
-def get_bunches(position, quontity):
-    pass
+def get_bunches():
+    return _holder
 
 def is_gameover():
-    pass
+    return sum(_holder)==0
