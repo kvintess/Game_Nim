@@ -7,12 +7,16 @@ user_number = 1
 while True:
     cprint('Текущая позиция', 'red')
     print(get_bunches())
-    color_of_player = 'green' if user_number==1 else 'green'
+    color_of_player = 'green' if user_number==1 else 'yellow'
     cprint('ходит игрок {}'.format(user_number), color_of_player)
     pos=int(input(colored(('Откуда берем?'), color_of_player)))
     qua=int(input('Сколько берем?'))
-    take_from_bunch(position=pos, quantity=qua)
+    step_successed = take_from_bunch(position=pos, quantity=qua)
+    if step_successed:
+        user_number = 2 if user_number == 1 else 1
+    else:
+        cprint('Какая-то ошибка', 'yellow')
     if is_gameover():
         break
-    user_number = 2 if user_number == 1 else 1
+
 print('победа игрока номер ', user_number)
