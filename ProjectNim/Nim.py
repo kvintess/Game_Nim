@@ -5,9 +5,10 @@ from termcolor import cprint
 put_stones()
 user_number = 1
 while True:
-    cprint('Текущая позиция', 'red'7)
+    cprint('Текущая позиция', 'red')
     print(get_bunches())
-    print('ходит игрок {}'.format(user_number))
+    color_of_player = 'yellow' if user_number==1 else 'green'
+    cprint('ходит игрок {}'.format(user_number), color_of_player)
     pos=int(input('Откуда берем?'))
     qua=int(input('Сколько берем?'))
     take_from_bunch(position=pos, quantity=qua)
