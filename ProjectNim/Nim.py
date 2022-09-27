@@ -6,8 +6,12 @@ put_stones()
 while True:
     print('Текущая позиция')
     print(get_bunches())
-    pos=input('Откуда берем?')
-    qua=input('Сколько берем?')
-    take_from_bunch(position=pos, quontity=qua)
+    pos=int(input('Откуда берем?'))
+    qua=int(input('Сколько берем?'))
+    take_from_bunch(position=pos, quantity=qua)
+    print(len(Nim_engine._holder))
+
+
+
     if is_gameover():
         break
