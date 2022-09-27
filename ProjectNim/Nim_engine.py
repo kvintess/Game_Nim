@@ -3,6 +3,7 @@ import random
 _holder= []
 
 def put_stones():
+    """разложить камни поповерхности"""
     global _holder
     _holder=[]
     for i in range(5):
